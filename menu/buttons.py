@@ -1,4 +1,4 @@
-import bge
+eximport bge
 import math
 class Buttons():
 	"""docstring for Buttons"""
