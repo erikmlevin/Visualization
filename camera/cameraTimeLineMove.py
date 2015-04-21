@@ -2,7 +2,6 @@ import bge
 import Rasterizer as R
 import math 
 import mathutils as mathu
-import aud
 
 class CameraTimeline():
 	def __init__(self):
@@ -11,10 +10,10 @@ class CameraTimeline():
 		self.scene = bge.logic.getCurrentScene()
 		self.camera = self.scene.objects['Camera']
 		self.timelineWidth = self
+
 	def shifter(self):
 		mouse = self.cont.sensors['mouse']
 		if 'x' not in self.camera:
-			print('a')
 			self.camera['x'] = 0.0
 			x = R.getWindowWidth() // 2
 			y = R.getWindowHeight() // 2
@@ -27,7 +26,6 @@ class CameraTimeline():
 		x = float(xpos - mouse.position[0])*self.SENSITIVITY
 		
 		self.camera['x'] += x
-		print(self.camera['x'])
 		if self.camera['x'] > 8.5:
 			self.camera['x'] = 8.5
 		if self.camera['x'] < -8.5:
@@ -35,7 +33,7 @@ class CameraTimeline():
 
 		
 		z = self.camera.position[2]
-		self.camera.position[0] = self.camera['x']
+		self.camera.position[0] = -self.camera['x']
 
 def camera():
 	move = CameraTimeline()
