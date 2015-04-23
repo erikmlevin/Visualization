@@ -38,4 +38,3 @@ class CameraTimeline():
 def camera():
 	move = CameraTimeline()
 	move.shifter()
-camera()

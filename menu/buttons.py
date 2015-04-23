@@ -26,9 +26,7 @@ class Buttons():
 def hover():
 	hov = Buttons()
 	hov.buttonHover()
-hover()
 
 def butt():
 	but = Buttons()
 	but.button01()
-butt()

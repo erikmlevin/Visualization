@@ -1,16 +1,17 @@
 import bge
 import math 
 
+
 class CameraLook():
 	"""docstring for CameraLook"""
 	def __init__(self):
 		self.cont = bge.logic.getCurrentController()
 		self.scene = bge.logic.getCurrentScene()
+		bge.logic.mouse.visible = True
 
 	def cameraLook(self):
 		camera = self.cont.owner
-		if 'x' not in camera:
-			camera['x'] = 0.0
+		if 'max' not in camera:
 			camera['max'] = self.scene.objects['Waveform']['lenght']
 
 		if camera['isRuning']:
@@ -23,7 +24,6 @@ class CameraLook():
 
 
 def camLook():
+
 	cl = CameraLook()
 	cl.cameraLook()
-
-camLook()
