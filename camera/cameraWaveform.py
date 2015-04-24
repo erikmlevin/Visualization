@@ -16,7 +16,6 @@ class CameraLook():
 
 		if camera['isRuning']:
 			camera['x'] += 0.4*0.1
-		
 		if camera['x'] > camera['max']:
 			camera['x'] = camera['max']
 		
